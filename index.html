@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+        const currentUrl = new URL(window.location.href);
+        const params = currentUrl.searchParams;
+        
+        const redirectUrl = new URL('https://ya.ru');
+        
+        params.forEach((value, key) => {
+            redirectUrl.searchParams.append(key, value);
+        });
+        
+        window.location.replace(redirectUrl.toString());
+    </script>
+</head>
+<body>
+    <p>Redirecting to Google...</p>
+</body>
+</html>
